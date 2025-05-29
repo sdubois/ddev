@@ -45,6 +45,12 @@ $config['symfony_mailer.mailer_transport.sendmail']['configuration']['pass'] = '
 $config['symfony_mailer.mailer_transport.sendmail']['configuration']['host'] = 'localhost';
 $config['symfony_mailer.mailer_transport.sendmail']['configuration']['port'] = '1025';
 
+// Override drupal/phpmailer_smtp default config to use Mailpit.
+$config['phpmailer_smtp.settings']['smtp_host'] = 'localhost:1025';
+$config['phpmailer_smtp.settings']['smtp_protocol'] = 'standard';
+$config['phpmailer_smtp.settings']['smtp_username'] = '';
+$config['phpmailer_smtp.settings']['smtp_password'] = '';
+
 // Enable verbose logging for errors.
 // https://www.drupal.org/forum/support/post-installation/2018-07-18/enable-drupal-8-backend-errorlogdebugging-mode
 $config['system.logging']['error_level'] = 'verbose';
